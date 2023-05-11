@@ -1,0 +1,26 @@
+{
+    "tshirt":[
+        {
+            "id": 1,
+            "brand": "Yalex",
+            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
+            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
+
+        },
+        {
+            "id": 2,
+            "brand": "BluCorner",
+            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
+            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
+        },
+        {
+            "id": 3,
+            "brand": "Lifeline",
+            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
+            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
+        }
+    ]
+}
