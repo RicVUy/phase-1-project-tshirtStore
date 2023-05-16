@@ -27,6 +27,42 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
+    #detailsOfProduct {
+      position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #333;
+    background: rgba(255, 0, 0, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+    }
+  #submitDetails{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #333;
+    background: rgba(0, 0, 255, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+  }
+  #totalAmount {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #333;
+    background: rgba( 0, 255, 0, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+  }
   section {
     display: flex;
     flex-flow: row;

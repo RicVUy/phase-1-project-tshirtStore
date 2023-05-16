@@ -5,22 +5,25 @@
             "brand": "Yalex",
             "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
             "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
-
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
+            "price":[10]
+            
         },
         {
             "id": 2,
             "brand": "BluCorner",
             "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
             "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
+            "price":[12]
         },
         {
             "id": 3,
             "brand": "Lifeline",
             "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
             "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"]
+            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
+            "price":[18]
         }
     ]
 }
