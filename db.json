@@ -3,27 +3,95 @@
         {
             "id": 1,
             "brand": "Yalex",
-            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
-            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
-            "price":[10]
-            
+            "neckDesign": "roundneck",
+            "color": "white",
+            "size":"small",
+            "price": 10,
+            "inventory": 12
+           
         },
         {
             "id": 2,
-            "brand": "BluCorner",
-            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
-            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
-            "price":[12]
+            "brand": "Yalex",
+            "neckDesign": "roundneck",
+            "color": "white",
+            "size":"medium",
+            "price": 11,
+            "inventory": 12
+           
         },
         {
             "id": 3,
+            "brand": "Yalex",
+            "neckDesign": "roundneck",
+            "color": "white",
+            "size":"large",
+            "price": 12,
+            "inventory": 12
+           
+        },
+        {
+            "id": 4,
+            "brand": "Blucorner",
+            "neckDesign": "Vneck",
+            "color": "white",
+            "size": "small",
+            "price": 12,
+            "inventory": 6
+        },
+        {
+            "id": 5,
+            "brand": "Blucorner",
+            "neckDesign": "Vneck",
+            "color": "white",
+            "size": "medium",
+            "price": 12,
+            "inventory": 6
+        },
+        {
+            "id": 6,
+            "brand": "Blucorner",
+            "neckDesign": "Vneck",
+            "color": "white",
+            "size": "large",
+            "price": 12,
+            "inventory": 6
+        },
+        {
+            "id": 7,
             "brand": "Lifeline",
-            "neckDesign": [ "roundNeck", "Vneck", "wCollar"],
-            "color":[ "white", "red", "yellow" ,"green", "blue", "black"],
-            "size":["extraSmall", " small", "medium", "large", "extraLarge"],
-            "price":[18]
+            "neckDesign": "withCollar",
+            "color": "white",
+            "size":"small",
+            "price": 18,
+            "inventory": 8
+        },
+        {
+            "id": 8,
+            "brand": "Lifeline",
+            "neckDesign": "withCollar",
+            "color": "white",
+            "size":"medium",
+            "price": 19,
+            "inventory": 8
+        },
+        {
+            "id": 9,
+            "brand": "Lifeline",
+            "neckDesign": "withCollar",
+            "color": "white",
+            "size":"large",
+            "price": 20,
+            "inventory": 8
+        },
+        {
+            "id": 10,
+            "brand": "Lifeline",
+            "neckDesign": "withCollar",
+            "color": "white",
+            "size":"extralarge",
+            "price": 21,
+            "inventory": 8
         }
     ]
 }
