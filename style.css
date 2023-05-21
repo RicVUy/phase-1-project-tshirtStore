@@ -51,7 +51,7 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
-  #totalAmount {
+  #checkOut {
     position: relative;
     display: flex;
     justify-content: center;
@@ -59,6 +59,18 @@ body, css {
     flex-direction: row;
     border: 1px solid #333;
     background: rgba( 0, 255, 0, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+  }
+  #exit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #333;
+    background: rgba( 100, 120, 20, 0.3);
     padding: 15px 20px 18px 18px;
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
