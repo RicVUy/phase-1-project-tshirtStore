@@ -6,7 +6,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"small",
-            "price": 10,
+            "price": 10.50,
             "inventory": 12
            
         },
@@ -16,7 +16,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"medium",
-            "price": 11,
+            "price": 11.50,
             "inventory": 12
            
         },
@@ -26,7 +26,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"large",
-            "price": 12,
+            "price": 12.50,
             "inventory": 12
            
         },
@@ -36,7 +36,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "small",
-            "price": 12,
+            "price": 12.75,
             "inventory": 6
         },
         {
@@ -45,7 +45,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "medium",
-            "price": 12,
+            "price": 13.00,
             "inventory": 6
         },
         {
@@ -54,7 +54,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "large",
-            "price": 12,
+            "price": 13.50,
             "inventory": 6
         },
         {
@@ -63,7 +63,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"small",
-            "price": 18,
+            "price": 18.50,
             "inventory": 8
         },
         {
@@ -72,7 +72,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"medium",
-            "price": 19,
+            "price": 19.50,
             "inventory": 8
         },
         {
@@ -81,7 +81,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"large",
-            "price": 20,
+            "price": 20.00,
             "inventory": 8
         },
         {
@@ -90,7 +90,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"extralarge",
-            "price": 21,
+            "price": 21.00,
             "inventory": 8
         }
     ]
