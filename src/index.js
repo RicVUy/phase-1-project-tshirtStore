@@ -29,8 +29,8 @@ const init = () => {
   document.addEventListener('DOMContentLoaded', init);
   let processedData = [];
   const init1 = () => {
-    const inputForm = document.querySelector("form");
-    inputForm.addEventListener("submit", (event)  => {
+    const inputForm1 = document.querySelector("form1");
+    inputForm1.addEventListener("submit", (event)  => {
       event.preventDefault();
      
      const input = document.querySelector("input#EnterProductNumber");
@@ -45,10 +45,17 @@ const init = () => {
       let numItems = 0;
        numItems = document.querySelector("section#TshirtDetail p1");
        totalAmount = document.querySelector("section#TshirtDetail p2");
-      //const pricePtax = document.querySelector("section#TshirtDetail p3");
-      //const updatedInv = document.querySelector("section#TshirtDetail p4");
-      price.innerText = data.price;
+      
+     price.innerText = data.price;
       processedData.push(price.innerText);
+
+      function findNumItems() {
+        for (const item of processedData) {
+          numItems +=1;
+          return numItems;
+       }
+      
+     }
       function findTotalAmount() {
         
            for (const item of processedData) {
@@ -58,35 +65,12 @@ const init = () => {
                  
            }
       }
-      //pricePtax = price.innerText + price.innerText* 0.1;
-      //return pricePtax;
-     // inventory.innerText = data.inventory;
-     // updatedInv = inventory.innerText - 1;
-     // return updatedInv;
-      
-     // price.innerText = data.price;
-     //pricePtax = data.price + data.price* 0.1;
-     // return pricePtax;
-     // inventory.innerText = data.inventory;
-     //updatedInv = data.inventory - 1;
-      //return updatedInv;
-
-     });
+       
     });
-  } 
+  });
+}
 document.addEventListener('DOMContentLoaded', init1);
-document.getElementById("myBtn").addEventListener("click", addToCart());
 
-function addToCart() {
- document.getElementById("demon").innerHTML = displayCart();
-}
-function displayCart() {
-  let totalAmount = 0;
-     for (const item of processedData) {
-    totalAmount += item;
-    return totalAmount;
-     }
-}
 
   document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
 
@@ -95,7 +79,14 @@ function displayCart() {
  }
  function checkOut() {
 
+ const amountTax = totalAmountpTax();
+      amountTax  += amountTax* 0.1;
+      return amountTax;
+
+     
  }
+  
+    
 
  document.getElementById("myBtn2").addEventListener("click", displayTy);
 
