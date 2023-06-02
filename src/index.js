@@ -25,8 +25,9 @@ const init = () => {
      });
     });
   }
+   document.addEventListener('DOMContentLoaded', init);
   
-  document.addEventListener('DOMContentLoaded', init);
+  
   let processedData = [];
   const init1 = () => {
     const inputForm1 = document.querySelector("form1");
@@ -72,7 +73,8 @@ const init = () => {
 document.addEventListener('DOMContentLoaded', init1);
 
 
-  document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
+  
+document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
 
  function displayCheckOut() {
   document.getElementById("demo").innerHTML = checkOut();
