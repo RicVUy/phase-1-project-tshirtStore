@@ -28,35 +28,43 @@
   <section>
     <div id="detailsOfProduct">
      <h3>Product Description</h3>
-    <form>
+    <form id="productDescriptionForm">
       <label for="searchByID">Search By Product Number</label>
       <input id="searchByID" type="text" placeholder="Enter Product Number here"/>
       <input type="submit" />
     </form>
   </section>
   <section id="TshirtDetails">
-    <p1>neck design</p1>
-    <p2>color</p2>
-    <p3>size</p3>
-    <p4>price</p4>
-    <p5>inventory</p5>
+    <p1>neck design ----</p1>
+    <p id="neckDesign">" "</p>
+    <p2>color ----</p2>
+    <p id="color">" "</p>
+    <p3>size ----</p3>
+    <p id= "size">" "</p>
+    <p4>price ----</p4>
+    <p id="price">0</p>
+    <p5>inventory ----</p5>
+    <p id="inventory">0</p>
   </section>
   </div>
+  
   <div id="submitDetails">
     <h3>Add to Cart</h3>
-    <form1>
+    <form id="addToCartForm">
       <label for="EnterProductNumber">Enter Product Number</label>
       <input id="EnterProductNumber" type="text" placeholder="Enter product number here"/>
       <input type="submit" />
-    </form1> 
+    </form> 
     <section id="TshirtDetail">
-      <p1>number of items in the cart</p1>
-      <p2>total amount</p2>
-      
-      
-      
-    </section>
+      <p1>Price of the item chosen</p1>
+      <p id="priceItem">0</p>
+      <p2>number of items in the cart</p2>
+      <p id="numItems">0</p>
+      <p3>total amount</p3>
+      <p id="totalAmount">0</p>
+      </section>
   </div>
+  
   <div id="checkOut">
     <h3>Check Out</h3> 
     <button id="myBtn1">click me</button>
@@ -64,15 +72,18 @@
     <ul>
       <li><h5>Total Amount + 10% tax</h5> </li>
      <li><h4> Pay this amount:</h4></li>
+      <p id="amountWithTax">0</p>
     </ul> 
   </div>
   <div id="exit">
     
     <h4>EXIT</h4> 
-    <button id="myBtn2">Exit</button>
-     <p id="demo"></p>
-  </div>
+    <button id="exitButton">Exit</button>
+    <div id="thankYouMessage" style="display: none;">
+      Thank you for shopping at Ricardo's Kamiseta!
+    </div>
 
 
 </body>
 </html>
+

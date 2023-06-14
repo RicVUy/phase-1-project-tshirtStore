@@ -1,5 +1,5 @@
 const init = () => {
-    const inputForm = document.querySelector("form");
+    const inputForm = document.querySelector("#productDescriptionForm");
     inputForm.addEventListener("submit", (event)  => {
       event.preventDefault();
      
@@ -10,13 +10,13 @@ const init = () => {
      fetch(`http://localhost:3000/tshirt/${input.value}`)
      .then((response) => response.json())
      .then((data) => {
-      //const brand = document.querySelector("section#TshirtDetails h4");
-      const neckDesign = document.querySelector("section#TshirtDetails p1");
-      const color = document.querySelector("section#TshirtDetails p2");
-     const size = document.querySelector("section#TshirtDetails p3");
-     const price = document.querySelector("section#TshirtDetails p4");
-      const inventory = document.querySelector("section#TshirtDetails p5");
-      //brand.innerText = data.brand;
+      
+      const neckDesign = document.querySelector("#neckDesign");
+      const color = document.querySelector("#color");
+     const size = document.querySelector("#size");
+     const price = document.querySelector("#price");
+      const inventory = document.querySelector("#inventory");
+      
       neckDesign.innerText = data.neckDesign;
       color.innerText = data.color;
       size.innerText = data.size;
@@ -27,10 +27,10 @@ const init = () => {
   }
    document.addEventListener('DOMContentLoaded', init);
   
-  
-  let processedData = [];
+  //let processedData = [];
+ 
   const init1 = () => {
-    const inputForm1 = document.querySelector("form1");
+    const inputForm1 = document.querySelector("#addToCartForm");
     inputForm1.addEventListener("submit", (event)  => {
       event.preventDefault();
      
@@ -42,59 +42,49 @@ const init = () => {
      .then((response) => response.json())
      .then((data) => {
        
-      let totalAmount = 0;
-      let numItems = 0;
-       numItems = document.querySelector("section#TshirtDetail p1");
-       totalAmount = document.querySelector("section#TshirtDetail p2");
+       const price = document.querySelector("#priceItem");
+       let numItems = document.querySelector("#numItems");
+       let totalAmount = document.querySelector("#totalAmount");
+       let processedData = [];
       
-     price.innerText = data.price;
+       price.innerText = data.price;
       processedData.push(price.innerText);
-
-      function findNumItems() {
+      console.log(processedData);
+      
+     numItems =  function findNumItems() {
         for (const item of processedData) {
           numItems +=1;
-          return numItems;
+          }return numItems;
        }
-      
-     }
-      function findTotalAmount() {
-        
-           for (const item of processedData) {
+       console.log(numItems());
+      totalAmount = function findTotalAmount() {
+        for (const item of processedData) {
           totalAmount += item;
-          numItems += 1;
-          return totalAmount;
-                 
-           }
+       } return totalAmount;
       }
-       
-    });
+       console.log(totalAmount());
+        });
   });
 }
 document.addEventListener('DOMContentLoaded', init1);
 
-
-  
 document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
 
  function displayCheckOut() {
   document.getElementById("demo").innerHTML = checkOut();
  }
  function checkOut() {
-
- const amountTax = totalAmountpTax();
-      amountTax  += amountTax* 0.1;
-      return amountTax;
-
-     
- }
+     totalAmount += totalAmount*0.1;
+     return totalAmount;
+ 
+}
   
-    
+   // Get references to the button and the thank you message
+const exitButton = document.getElementById('exitButton');
+const thankYouMessage = document.getElementById('thankYouMessage');
 
- document.getElementById("myBtn2").addEventListener("click", displayTy);
-
- function displayTy() {
-  document.getElementById("demo").innerHTML = thankYou();
- }
- function thankYou(){
-  console.log( "Thank You For Shopping At RICARDO'S KAMISETA");
- }
+// Add a click event listener to the exit button
+exitButton.addEventListener('click', function() {
+  // Show the thank you message
+  thankYouMessage.style.display = 'block';
+});
