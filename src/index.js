@@ -5,7 +5,7 @@ const init = () => {
      
      const input = document.querySelector("input#searchByID");
   
-     console.log(input.value);
+     
   
      fetch(`http://localhost:3000/tshirt/${input.value}`)
      .then((response) => response.json())
@@ -27,7 +27,7 @@ const init = () => {
   }
    document.addEventListener('DOMContentLoaded', init);
   
-  //let processedData = [];
+  let processedData = [];
  
   const init1 = () => {
     const inputForm1 = document.querySelector("#addToCartForm");
@@ -36,36 +36,47 @@ const init = () => {
      
      const input = document.querySelector("input#EnterProductNumber");
   
-     console.log(input.value);
-     
+    
+
      fetch(`http://localhost:3000/tshirt/${input.value}`)
      .then((response) => response.json())
      .then((data) => {
        
-       const price = document.querySelector("#priceItem");
-       let numItems = document.querySelector("#numItems");
-       let totalAmount = document.querySelector("#totalAmount");
-       let processedData = [];
+       const priceP = document.querySelector("#priceItem");
+       const numItems = document.querySelector("#numItems");
+       const totalAmount = document.querySelector("#totalAmount");
+       //let processedData = [];
       
-       price.innerText = data.price;
-      processedData.push(price.innerText);
+       priceP.innerText = data.price;
+      processedData.push(priceP.innerText);
       console.log(processedData);
-      
-     numItems =  function findNumItems() {
-        for (const item of processedData) {
-          numItems +=1;
-          }return numItems;
+      //add up prices from the process data.
+      // processed data is an array of prices.
+      // iterate through processedData and count each element in it.
+      // Use a for loop to iterate.
+        let count = 0;
+       for (const item of processedData) {
+             console.log(item)
+           count += 1;
+
        }
-       console.log(numItems());
-      totalAmount = function findTotalAmount() {
-        for (const item of processedData) {
-          totalAmount += item;
-       } return totalAmount;
-      }
-       console.log(totalAmount());
+
+       console.log(count);
+       
+       numItems.innerText = count
+       let totalAm = 0;
+       for (const item of processedData){
+        console.log(typeof item)
+        const pr = Number(item);
+            totalAm += pr;
+
+       }
+      console.log(totalAm);
+        totalAmount.innerText = totalAm
         });
   });
 }
+
 document.addEventListener('DOMContentLoaded', init1);
 
 document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
