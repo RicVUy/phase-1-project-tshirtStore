@@ -28,7 +28,7 @@ const init = () => {
    document.addEventListener('DOMContentLoaded', init);
   
   let processedData = [];
- 
+  
   const init1 = () => {
     const inputForm1 = document.querySelector("#addToCartForm");
     inputForm1.addEventListener("submit", (event)  => {
@@ -41,7 +41,7 @@ const init = () => {
      fetch(`http://localhost:3000/tshirt/${input.value}`)
      .then((response) => response.json())
      .then((data) => {
-       
+       console.log(data)
        const priceP = document.querySelector("#priceItem");
        const numItems = document.querySelector("#numItems");
        const totalAmount = document.querySelector("#totalAmount");
@@ -61,7 +61,7 @@ const init = () => {
 
        }
 
-       console.log(count);
+       
        
        numItems.innerText = count
        let totalAm = 0;
@@ -78,26 +78,31 @@ const init = () => {
 }
 document.addEventListener('DOMContentLoaded', init1);
 
+// Add a click button to Check Out
 document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
-
-  let totalAm = 0;
+// Iterate the processedData and add up the prices
+   let totalAm1 = 0;
   for (const item of processedData){
-   console.log(typeof item)
+   //console.log(typeof item)
    const pr = Number(item);
-       totalAm += pr;
+       totalAm1 += pr;
      }
- console.log(totalAm);
-  
+ 
+  // Calculate the total amount plus the 10% 
+  let amountTax = 0;
  function checkOut() {
-      totalAm += totalAm*0.1;
-      return totalAm;
+amountTax = totalAm1 + totalAm1 *0.1;
+      return amountTax;
  }
+  amountWithTax.innerText = amountTax;
+ // Make the total amount plus tax display in the Check out container
 function displayCheckOut() {
-  document.getElementById("demo1").innerHTML = checkOut();
+  console.log("hello")
+  console.log(processedData);
  }
    // Get references to the button and the thank you message
-   // Add a click event listener to the exit button
 const element = document.getElementById("myBtn");
+   // Add a click event listener to the exit button
 element.addEventListener("click", myF);
 function myF() {
 document.getElementById("demo").innerHTML= "Thank you for shopping at Ricardo's Kamiseta";
