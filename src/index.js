@@ -56,7 +56,7 @@ const init = () => {
       // Use a for loop to iterate.
         let count = 0;
        for (const item of processedData) {
-             console.log(item)
+           //  console.log(item)
            count += 1;
 
        }
@@ -66,36 +66,39 @@ const init = () => {
        numItems.innerText = count
        let totalAm = 0;
        for (const item of processedData){
-        console.log(typeof item)
+       // console.log(typeof item)
         const pr = Number(item);
             totalAm += pr;
 
        }
-      console.log(totalAm);
+     // console.log(totalAm);
         totalAmount.innerText = totalAm
         });
   });
 }
-
 document.addEventListener('DOMContentLoaded', init1);
 
 document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
 
- function displayCheckOut() {
-  document.getElementById("demo").innerHTML = checkOut();
- }
- function checkOut() {
-     totalAmount += totalAmount*0.1;
-     return totalAmount;
- 
-}
+  let totalAm = 0;
+  for (const item of processedData){
+   console.log(typeof item)
+   const pr = Number(item);
+       totalAm += pr;
+     }
+ console.log(totalAm);
   
+ function checkOut() {
+      totalAm += totalAm*0.1;
+      return totalAm;
+ }
+function displayCheckOut() {
+  document.getElementById("demo1").innerHTML = checkOut();
+ }
    // Get references to the button and the thank you message
-const exitButton = document.getElementById('exitButton');
-const thankYouMessage = document.getElementById('thankYouMessage');
-
-// Add a click event listener to the exit button
-exitButton.addEventListener('click', function() {
-  // Show the thank you message
-  thankYouMessage.style.display = 'block';
-});
+   // Add a click event listener to the exit button
+const element = document.getElementById("myBtn");
+element.addEventListener("click", myF);
+function myF() {
+document.getElementById("demo").innerHTML= "Thank you for shopping at Ricardo's Kamiseta";
+}
