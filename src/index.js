@@ -1,109 +1,86 @@
-const init = () => {
-    const inputForm = document.querySelector("#productDescriptionForm");
-    inputForm.addEventListener("submit", (event)  => {
-      event.preventDefault();
-     
-     const input = document.querySelector("input#searchByID");
-  
-     
-  
-     fetch(`http://localhost:3000/tshirt/${input.value}`)
-     .then((response) => response.json())
-     .then((data) => {
-      
-      const neckDesign = document.querySelector("#neckDesign");
-      const color = document.querySelector("#color");
-     const size = document.querySelector("#size");
-     const price = document.querySelector("#price");
-      const inventory = document.querySelector("#inventory");
-      
-      neckDesign.innerText = data.neckDesign;
-      color.innerText = data.color;
-      size.innerText = data.size;
-      price.innerText = data.price;
-      inventory.innerText = data.inventory;
-     });
-    });
-  }
-   document.addEventListener('DOMContentLoaded', init);
-  
-  let processedData = [];
-  
-  const init1 = () => {
-    const inputForm1 = document.querySelector("#addToCartForm");
-    inputForm1.addEventListener("submit", (event)  => {
-      event.preventDefault();
-     
-     const input = document.querySelector("input#EnterProductNumber");
-  
-    
+let processedData = [];
+let totalAm = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const inputForm = document.querySelector("#productDescriptionForm");
 
-     fetch(`http://localhost:3000/tshirt/${input.value}`)
-     .then((response) => response.json())
-     .then((data) => {
-       console.log(data)
-       const priceP = document.querySelector("#priceItem");
-       const numItems = document.querySelector("#numItems");
-       const totalAmount = document.querySelector("#totalAmount");
-       //let processedData = [];
-      
-       priceP.innerText = data.price;
-      processedData.push(priceP.innerText);
-      console.log(processedData);
-      //add up prices from the process data.
-      // processed data is an array of prices.
-      // iterate through processedData and count each element in it.
-      // Use a for loop to iterate.
-        let count = 0;
-       for (const item of processedData) {
-           //  console.log(item)
-           count += 1;
+  inputForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-       }
+    const input = document.querySelector("input#searchByID");
 
-       
-       
-       numItems.innerText = count
-       let totalAm = 0;
-       for (const item of processedData){
-       // console.log(typeof item)
-        const pr = Number(item);
-            totalAm += pr;
+    fetch(`http://localhost:3000/tshirt/${input.value}`)
+      .then((response) => response.json())
+      .then((data) => {
 
-       }
-     // console.log(totalAm);
-        totalAmount.innerText = totalAm
-        });
+        const neckDesign = document.querySelector("#neckDesign");
+        const color = document.querySelector("#color");
+        const size = document.querySelector("#size");
+        const price = document.querySelector("#price");
+        const inventory = document.querySelector("#inventory");
+
+        neckDesign.innerText = data.neckDesign;
+        color.innerText = data.color;
+        size.innerText = data.size;
+        price.innerText = data.price;
+        inventory.innerText = data.inventory;
+      });
   });
-}
-document.addEventListener('DOMContentLoaded', init1);
 
-// Add a click button to Check Out
-document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
-// Iterate the processedData and add up the prices
-   let totalAm1 = 0;
-  for (const item of processedData){
-   //console.log(typeof item)
-   const pr = Number(item);
-       totalAm1 += pr;
-     }
- 
-  // Calculate the total amount plus the 10% 
-  let amountTax = 0;
- function checkOut() {
-amountTax = totalAm1 + totalAm1 *0.1;
-      return amountTax;
- }
-  amountWithTax.innerText = amountTax;
- // Make the total amount plus tax display in the Check out container
-function displayCheckOut() {
-  console.log("hello")
-  console.log(processedData);
- }
-   // Get references to the button and the thank you message
-const element = document.getElementById("myBtn");
-   // Add a click event listener to the exit button
-element.addEventListener("click", myF);
-function myF() {
-document.getElementById("demo").innerHTML= "Thank you for shopping at Ricardo's Kamiseta";
-}
+  const inputForm1 = document.querySelector("#addToCartForm");
+  inputForm1.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const input = document.querySelector("input#EnterProductNumber");
+
+
+
+    fetch(`http://localhost:3000/tshirt/${input.value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        const priceP = document.querySelector("#priceItem");
+        const numItems = document.querySelector("#numItems");
+        const totalAmount = document.querySelector("#totalAmount");
+        //let processedData = [];
+
+        priceP.innerText = data.price;
+        processedData.push(parseFloat(priceP.innerText));
+        console.log(processedData);
+        //add up prices from the process data.
+        // processed data is an array of prices.
+        // iterate through processedData and count each element in it.
+        // Use a for loop to iterate.
+        let count = 0;
+        for (const item of processedData) {
+          //  console.log(item)
+          count += 1;
+
+        }
+
+
+
+        numItems.innerText = count
+        totalAm = 0
+        for (const item of processedData) {
+          totalAm += Number(item);
+          console.log(totalAm)
+        }
+        totalAmount.innerText = totalAm
+      });
+  });
+
+  // Add a click button to Check Out
+  document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
+  function displayCheckOut() {
+    let totalWithTax = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
+    document.querySelector("#amountWithTax").textContent = totalWithTax
+  }
+  // Get references to the button and the thank you message
+  const element = document.getElementById("myBtn");
+  // Add a click event listener to the exit button
+  element.addEventListener("click", myF);
+  function myF() {
+    document.getElementById("demo").innerHTML = "Thank you for shopping at Ricardo's Kamiseta";
+  }
+
+});
