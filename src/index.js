@@ -47,6 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         priceP.innerText = data.price;
         inventory.innerText = data.inventory
         processedData.push(parseFloat(priceP.innerText));
+        let inv = Number(inventory.innerText)
+        function updateInv(){
+           inv -= 1;
+           return inv
+        }
+        console.log(inv)
         console.log(processedData);
         //add up prices from the process data.
         // processed data is an array of prices.
@@ -75,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
       });
-       updateInventory = (id, inventory.innerText );
+       updateInventory = ( inventory.innerText );
        
-      function updateInventory(id, newInventory ){
+      function updateInventory( newInventory ){
         fetch(`http://localhost:3000/tshirt/${id}`, {
           method: "PATCH",
           headers:
@@ -109,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   element.addEventListener("click", myF);
   function myF() {
     document.getElementById("demo").innerHTML = "Thank you for shopping at Ricardo's Kamiseta";
+    location.reload();
   }
-
+   
 });
