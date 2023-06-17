@@ -39,11 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((data) => {
         console.log(data)
         const priceP = document.querySelector("#priceItem");
+        const inventory = document.querySelector("#inventory");
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
         //let processedData = [];
 
         priceP.innerText = data.price;
+        inventory.innerText = data.inventory
         processedData.push(parseFloat(priceP.innerText));
         console.log(processedData);
         //add up prices from the process data.
@@ -61,19 +63,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
         numItems.innerText = count
         totalAm = 0
+        
         for (const item of processedData) {
           totalAm += Number(item);
           console.log(totalAm)
         }
         totalAmount.innerText = totalAm
+        
+       console.log(inventory.innerText)
+   
+ 
+
       });
+       updateInventory = (id, inventory.innerText );
+       
+      function updateInventory(id, newInventory ){
+        fetch(`http://localhost:3000/tshirt/${id}`, {
+          method: "PATCH",
+          headers:
+      {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      
+      body: JSON.stringify({
+        "inventory": newInventory 
+      })
+        }) 
+      }
   });
 
   // Add a click button to Check Out
   document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
   function displayCheckOut() {
     let totalWithTax = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
-    document.querySelector("#amountWithTax").textContent = totalWithTax
+    document.querySelector("#amountWithTax").textContent = totalWithTax;
+    
+  
+
+    
   }
   // Get references to the button and the thank you message
   const element = document.getElementById("myBtn");
