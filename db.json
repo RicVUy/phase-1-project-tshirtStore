@@ -6,6 +6,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"small",
+            "productdesc": "Yalex/rn/white/S--$10.50",
             "price": 10.50,
             "inventory": 12
            
@@ -16,6 +17,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"medium",
+            "productdesc": "Yalex/rn/white/M--$11.50",
             "price": 11.50,
             "inventory": 12
            
@@ -26,6 +28,7 @@
             "neckDesign": "roundneck",
             "color": "white",
             "size":"large",
+            "productdesc": "Yalex/rn/white/L--$12.50",
             "price": 12.50,
             "inventory": 12
            
@@ -36,6 +39,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "small",
+            "productdesc": "Blucorner/rn/white/S--$12.75",
             "price": 12.75,
             "inventory": 6
         },
@@ -45,6 +49,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "medium",
+            "productdesc": "Blucorner/rn/white/M--$13.00",
             "price": 13.00,
             "inventory": 6
         },
@@ -54,6 +59,7 @@
             "neckDesign": "Vneck",
             "color": "white",
             "size": "large",
+            "productdesc": "Blucorner/rn/white/L--$13.50",
             "price": 13.50,
             "inventory": 6
         },
@@ -63,6 +69,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"small",
+            "productdesc": "Lifeline/collar/white/S--$18.50",
             "price": 18.50,
             "inventory": 8
         },
@@ -72,6 +79,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"medium",
+            "productdesc": "Lifeline/collar/white/M--$19.50",
             "price": 19.50,
             "inventory": 8
         },
@@ -81,6 +89,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"large",
+            "productdesc": "Lifeline/collar/white/L--$20.00",
             "price": 20.00,
             "inventory": 8
         },
@@ -90,6 +99,7 @@
             "neckDesign": "withCollar",
             "color": "white",
             "size":"extralarge",
+            "productdesc": "Lifeline/collar/white/XL--$21.00",
             "price": 21.00,
             "inventory": 8
         }

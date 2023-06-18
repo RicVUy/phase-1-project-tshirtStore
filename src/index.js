@@ -1,4 +1,5 @@
-let processedData = [];
+let priceList = [];
+let prodDescpn = [];
 let totalAm = 0;
 document.addEventListener('DOMContentLoaded', () => {
   const inputForm = document.querySelector("#productDescriptionForm");
@@ -39,27 +40,38 @@ document.addEventListener('DOMContentLoaded', () => {
       .then((data) => {
         console.log(data)
         const priceP = document.querySelector("#priceItem");
+        const prodSumry = document.querySelector("#prodDes");
         const inventory = document.querySelector("#inventory");
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
+
         //let processedData = [];
 
         priceP.innerText = data.price;
         inventory.innerText = data.inventory
-        processedData.push(parseFloat(priceP.innerText));
+        prodSumry.innerText = data.productdesc
+        console.log(prodSumry.innerText);
+        priceList.push(parseFloat(priceP.innerText));
+        prodDescpn.push(prodSumry.innerText);
+        console.log(prodDescpn);
         let inv = Number(inventory.innerText)
         function updateInv(){
            inv -= 1;
            return inv
         }
         console.log(inv)
-        console.log(processedData);
+        console.log(priceList);
+        const item = prodDescpn.map(myFun)
+          function myFun(desc){
+            return desc;
+          }
+        
         //add up prices from the process data.
         // processed data is an array of prices.
         // iterate through processedData and count each element in it.
         // Use a for loop to iterate.
         let count = 0;
-        for (const item of processedData) {
+        for (const item of priceList) {
           //  console.log(item)
           count += 1;
 
@@ -70,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         numItems.innerText = count
         totalAm = 0
         
-        for (const item of processedData) {
+        for (const item of priceList) {
           totalAm += Number(item);
           console.log(totalAm)
         }
@@ -84,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
        updateInventory = ( inventory.innerText );
        
       function updateInventory( newInventory ){
-        fetch(`http://localhost:3000/tshirt/${id}`, {
+        fetch(`http://localhost:3000/tshirt`, {
           method: "PATCH",
           headers:
       {
@@ -105,8 +117,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalWithTax = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
     document.querySelector("#amountWithTax").textContent = totalWithTax;
     
-  
+  console.log(prodDescpn);
+  const listElement = document.getElementById("itemList");
 
+  // Create an unordered list element
+  const ulElement = document.createElement("ul");
+  
+  // Loop through the array and create list items for each element
+  prodDescpn.forEach(item => {
+    const liElement = document.createElement("li");
+    liElement.textContent = item;
+    ulElement.appendChild(liElement);
+  });
+  
+  // Append the unordered list to the desired element in the document
+  listElement.appendChild(ulElement);
     
   }
   // Get references to the button and the thank you message
