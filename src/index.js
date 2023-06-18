@@ -66,18 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return desc;
           }
         
-        //add up prices from the process data.
-        // processed data is an array of prices.
-        // iterate through processedData and count each element in it.
+        //add up prices in the priceList array.
+        // priceList  is an array of prices.
+        // iterate through priceList and count each element in it.
         // Use a for loop to iterate.
         let count = 0;
         for (const item of priceList) {
           //  console.log(item)
           count += 1;
-
         }
-
-
 
         numItems.innerText = count
         totalAm = 0
@@ -88,11 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         totalAmount.innerText = totalAm
         
-       console.log(inventory.innerText)
-   
- 
-
-      });
+        console.log(inventory.innerText)
+       });
        updateInventory = ( inventory.innerText );
        
       function updateInventory( newInventory ){
@@ -118,20 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector("#amountWithTax").textContent = totalWithTax;
     
   console.log(prodDescpn);
-  const listElement = document.getElementById("itemList");
+  const listProducts = document.getElementById("itemList");
 
   // Create an unordered list element
-  const ulElement = document.createElement("ul");
+  const ulProducts = document.createElement("ul");
   
   // Loop through the array and create list items for each element
   prodDescpn.forEach(item => {
-    const liElement = document.createElement("li");
-    liElement.textContent = item;
-    ulElement.appendChild(liElement);
+    const liProducts = document.createElement("li");
+    liProducts.textContent = item;
+    ulProducts.appendChild(liProducts);
   });
   
   // Append the unordered list to the desired element in the document
-  listElement.appendChild(ulElement);
+  listProducts.appendChild(ulProducts);
     
   }
   // Get references to the button and the thank you message
