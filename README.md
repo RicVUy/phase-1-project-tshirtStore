@@ -1,12 +1,17 @@
 TSHIRT STORE FOR ON-LINE SHOPPING
 
 A store front for selling three brands of Tshirt.
+C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (303).png
 
 An on-line shopper will choose from the product numbers under each brand of tshirt.
 When the ID number of the Tshirt brand is entered and the submit button is clicked,
+C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (304).png
+
 All the product description including the neck design, color, size, price and inventory of the product will be displayed in the browser.
+C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (305).png
 
 Items can then be added to a cart by entering the product number and clicking submit .
+C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (306).png
 
 After the submit button is clicked, the description of the product chosen,the price of the product , the current number of items in the cart and the current total amount  is displayed.
 If the buyer chose another product and click the submit button again, the description, the total amount and number of items should update.
