@@ -10,4 +10,5 @@ When the buyer checks out and click click me, the products in the cart and the t
 When the buyer click the exit button, where a thank-you-message is displayed, the app will close or refresh.
 
 here is the image of this app:
-(https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/82b83686-c5bf-40e4-ba70-66099631a701)
+
+![Screenshot (302)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/1e43d4b6-db9a-40dc-ac6d-61d6fa0fd302)
