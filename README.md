@@ -1,4 +1,4 @@
-Tshirt Store For On-Line Shopping
+TSHIRT STORE FOR ON-LINE SHOPPING
 A store front for selling three brands of Tshirt.
 When the ID number of the Tshirt brand is clicked, All the product description including the product number,price and inventory will be displayed in the browser.
 Tshirts can then be bought and added to a cart by submitting the product number.
@@ -9,5 +9,5 @@ can be seen if the product number is submitted in Description of the Product com
 When the buyer checks out and click click me, the products in the cart and the total amount plus the tax due will be displayed.
 When the buyer click the exit button, where a thank-you-message is displayed, the app will close or refresh.
 
-here is a link for an image of this app:
-![Screenshot (302)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/82b83686-c5bf-40e4-ba70-66099631a701)
+here is the image of this app:
+(https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/82b83686-c5bf-40e4-ba70-66099631a701)
