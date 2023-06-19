@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
 
-        //let processedData = [];
+    
 
         priceP.innerText = data.price;
         inventory.innerText = data.inventory
@@ -54,13 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         priceList.push(parseFloat(priceP.innerText));
         prodDescpn.push(prodSumry.innerText);
         console.log(prodDescpn);
-        let inv = Number(inventory.innerText)
-        function updateInv(){
-           inv -= 1;
-           return inv
-        }
-        console.log(inv)
-        console.log(priceList);
+        console.log(inventory.innerText)
+        
+
+      
+        
+      console.log(priceList);
         const item = prodDescpn.map(myFun)
           function myFun(desc){
             return desc;
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use a for loop to iterate.
         let count = 0;
         for (const item of priceList) {
-          //  console.log(item)
           count += 1;
         }
 
@@ -84,13 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(totalAm)
         }
         totalAmount.innerText = totalAm
+           
+           
         
-        console.log(inventory.innerText)
        });
-       updateInventory = ( inventory.innerText );
-       
-      function updateInventory( newInventory ){
-        fetch(`http://localhost:3000/tshirt`, {
+    
+      /* fetch(`http://localhost:3000/tshirt/${input.value}`, {
           method: "PATCH",
           headers:
       {
@@ -98,11 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         Accept: "application/json"
       },
       
-      body: JSON.stringify({
-        "inventory": newInventory 
+      body:JSON.stringify({
+      "inventory": ((inventory.innerText) -= 1)
       })
-        }) 
-      }
+      .then(res => res.json())
+      .then(inventory => console.log(inventory.innerText))
+      
+        }) */
+      
   });
 
   // Add a click button to Check Out

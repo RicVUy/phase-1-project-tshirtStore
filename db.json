@@ -1,107 +1,104 @@
 {
-    "tshirt":[
-        {
-            "id": 1,
-            "brand": "Yalex",
-            "neckDesign": "roundneck",
-            "color": "white",
-            "size":"small",
-            "productdesc": "PN#01/Yalex/rn/white/S",
-            "price": 10.50,
-            "inventory": 12
-           
-        },
-        {
-            "id": 2,
-            "brand": "Yalex",
-            "neckDesign": "roundneck",
-            "color": "white",
-            "size":"medium",
-            "productdesc": "PN#02/Yalex/rn/white/M",
-            "price": 11.50,
-            "inventory": 12
-           
-        },
-        {
-            "id": 3,
-            "brand": "Yalex",
-            "neckDesign": "roundneck",
-            "color": "white",
-            "size":"large",
-            "productdesc": "PN#03/Yalex/rn/white/L",
-            "price": 12.50,
-            "inventory": 12
-           
-        },
-        {
-            "id": 4,
-            "brand": "Blucorner",
-            "neckDesign": "Vneck",
-            "color": "white",
-            "size": "small",
-            "productdesc": "PN#04/Blucorner/rn/white/S",
-            "price": 12.75,
-            "inventory": 6
-        },
-        {
-            "id": 5,
-            "brand": "Blucorner",
-            "neckDesign": "Vneck",
-            "color": "white",
-            "size": "medium",
-            "productdesc": "PN#05/Blucorner/rn/white/M",
-            "price": 13.00,
-            "inventory": 6
-        },
-        {
-            "id": 6,
-            "brand": "Blucorner",
-            "neckDesign": "Vneck",
-            "color": "white",
-            "size": "large",
-            "productdesc": "PN#06/Blucorner/rn/white/L",
-            "price": 13.50,
-            "inventory": 6
-        },
-        {
-            "id": 7,
-            "brand": "Lifeline",
-            "neckDesign": "withCollar",
-            "color": "white",
-            "size":"small",
-            "productdesc": "PN#07/Lifeline/collar/white/S",
-            "price": 18.50,
-            "inventory": 8
-        },
-        {
-            "id": 8,
-            "brand": "Lifeline",
-            "neckDesign": "withCollar",
-            "color": "white",
-            "size":"medium",
-            "productdesc": "PN#08/Lifeline/collar/white/M",
-            "price": 19.50,
-            "inventory": 8
-        },
-        {
-            "id": 9,
-            "brand": "Lifeline",
-            "neckDesign": "withCollar",
-            "color": "white",
-            "size":"large",
-            "productdesc": "PN#09/Lifeline/collar/white/L",
-            "price": 20.00,
-            "inventory": 8
-        },
-        {
-            "id": 10,
-            "brand": "Lifeline",
-            "neckDesign": "withCollar",
-            "color": "white",
-            "size":"extralarge",
-            "productdesc": "PN#10/Lifeline/collar/white/XL",
-            "price": 21.00,
-            "inventory": 8
-        }
-    ]
+  "tshirt": [
+    {
+      "id": 1,
+      "brand": "Yalex",
+      "neckDesign": "roundneck",
+      "color": "white",
+      "size": "small",
+      "productdesc": "PN#01/Yalex/rn/white/S",
+      "price": 10.5,
+      "inventory": 12
+    },
+    {
+      "id": 2,
+      "brand": "Yalex",
+      "neckDesign": "roundneck",
+      "color": "white",
+      "size": "medium",
+      "productdesc": "PN#02/Yalex/rn/white/M",
+      "price": 11.5,
+      "inventory": 5
+    },
+    {
+      "id": 3,
+      "brand": "Yalex",
+      "neckDesign": "roundneck",
+      "color": "white",
+      "size": "large",
+      "productdesc": "PN#03/Yalex/rn/white/L",
+      "price": 12.5,
+      "inventory": -1
+    },
+    {
+      "id": 4,
+      "brand": "Blucorner",
+      "neckDesign": "Vneck",
+      "color": "white",
+      "size": "small",
+      "productdesc": "PN#04/Blucorner/rn/white/S",
+      "price": 12.75,
+      "inventory": -1
+    },
+    {
+      "id": 5,
+      "brand": "Blucorner",
+      "neckDesign": "Vneck",
+      "color": "white",
+      "size": "medium",
+      "productdesc": "PN#05/Blucorner/rn/white/M",
+      "price": 13,
+      "inventory": 9
+    },
+    {
+      "id": 6,
+      "brand": "Blucorner",
+      "neckDesign": "Vneck",
+      "color": "white",
+      "size": "large",
+      "productdesc": "PN#06/Blucorner/rn/white/L",
+      "price": 13.5,
+      "inventory": -1
+    },
+    {
+      "id": 7,
+      "brand": "Lifeline",
+      "neckDesign": "withCollar",
+      "color": "white",
+      "size": "small",
+      "productdesc": "PN#07/Lifeline/collar/white/S",
+      "price": 18.5,
+      "inventory": "4"
+    },
+    {
+      "id": 8,
+      "brand": "Lifeline",
+      "neckDesign": "withCollar",
+      "color": "white",
+      "size": "medium",
+      "productdesc": "PN#08/Lifeline/collar/white/M",
+      "price": 19.5,
+      "inventory": 10
+    },
+    {
+      "id": 9,
+      "brand": "Lifeline",
+      "neckDesign": "withCollar",
+      "color": "white",
+      "size": "large",
+      "productdesc": "PN#09/Lifeline/collar/white/L",
+      "price": 20,
+      "inventory": 9
+    },
+    {
+      "id": 10,
+      "brand": "Lifeline",
+      "neckDesign": "withCollar",
+      "color": "white",
+      "size": "extralarge",
+      "productdesc": "PN#10/Lifeline/collar/white/XL",
+      "price": 21,
+      "inventory": "8"
+    }
+  ]
 }
