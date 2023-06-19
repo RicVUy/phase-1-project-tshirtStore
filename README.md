@@ -1,7 +1,11 @@
 TSHIRT STORE FOR ON-LINE SHOPPING
+
 A store front for selling three brands of Tshirt.
+
 When the ID number of the Tshirt brand is clicked, All the product description including the product number,price and inventory will be displayed in the browser.
+
 Tshirts can then be bought and added to a cart by submitting the product number.
+
 After the submit button is clicked, the description of the product chosen,the price of the product ,the current total amount and the current number of items is displayed.
 If the buyer chose another product and click the submit button again, the description, the total amount and number of items should update.
 Inventory of a product will update everytime the buyer add that product to the cart, but it will not show immediately, however, changes in inventory 
