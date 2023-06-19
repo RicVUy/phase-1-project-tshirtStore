@@ -1,18 +1,21 @@
-let priceList = [];
-let prodDescpn = [];
-let totalAm = 0;
-document.addEventListener('DOMContentLoaded', () => {
-  const inputForm = document.querySelector("#productDescriptionForm");
+     // created an array of prices of items chosen by the buyer
+    let priceList = [];
+    //created an array of product-description-summary of items chosen by the buyer
+    let prodDescpn = [];
+   //initialized variable for the total amount of all the products chosen.
+    let totalAm = 0;
 
-  inputForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const input = document.querySelector("input#searchByID");
+// Start of PRODUCT DESCRIPTION component:
+    // submit a product number and make the description of the chosen product display 
+     document.addEventListener('DOMContentLoaded', () => {
+     const inputForm = document.querySelector("#productDescriptionForm");
+     inputForm.addEventListener("submit", (event) => {
+     event.preventDefault();
+     const input = document.querySelector("input#searchByID");
 
     fetch(`http://localhost:3000/tshirt/${input.value}`)
       .then((response) => response.json())
       .then((data) => {
-
         const neckDesign = document.querySelector("#neckDesign");
         const color = document.querySelector("#color");
         const size = document.querySelector("#size");
@@ -25,16 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         price.innerText = data.price;
         inventory.innerText = data.inventory;
       });
-  });
-
-  const inputForm1 = document.querySelector("#addToCartForm");
-  inputForm1.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const input = document.querySelector("input#EnterProductNumber");
-
-
-
+     });
+  
+//Start of the ADD TO CART component:
+       const inputForm1 = document.querySelector("#addToCartForm");
+       inputForm1.addEventListener("submit", (event) => {
+       event.preventDefault();
+       const input = document.querySelector("input#EnterProductNumber");
+      
     fetch(`http://localhost:3000/tshirt/${input.value}`)
       .then((response) => response.json())
       .then((data) => {
@@ -45,49 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
 
-    
-
         priceP.innerText = data.price;
         inventory.innerText = data.inventory
         prodSumry.innerText = data.productdesc
         console.log(prodSumry.innerText);
+        // add to an array the price of product chosen
         priceList.push(parseFloat(priceP.innerText));
+        // add to another array the product-description-summary of the same product
         prodDescpn.push(prodSumry.innerText);
-        console.log(prodDescpn);
-        console.log(inventory.innerText)
-        
-
-      
-        
-      console.log(priceList);
-        const item = prodDescpn.map(myFun)
-          function myFun(desc){
-            return desc;
-          }
-        
-        //add up prices in the priceList array.
-        // priceList  is an array of prices.
         // iterate through priceList and count each element in it.
-        // Use a for loop to iterate.
         let count = 0;
         for (const item of priceList) {
           count += 1;
         }
-
         numItems.innerText = count
-        totalAm = 0
-        
+        //add up prices in the priceList array.
+        totalAm = 0;
         for (const item of priceList) {
           totalAm += Number(item);
-          console.log(totalAm)
+          //console.log(totalAm)
         }
         totalAmount.innerText = totalAm
-           
-           
-        
-       });
-    
-      /* fetch(`http://localhost:3000/tshirt/${input.value}`, {
+        });
+       // update the inventory of the product added to the cart
+      fetch(`http://localhost:3000/tshirt/${input.value}`, {
           method: "PATCH",
           headers:
       {
@@ -98,43 +80,39 @@ document.addEventListener('DOMContentLoaded', () => {
       body:JSON.stringify({
       "inventory": ((inventory.innerText) -= 1)
       })
-      .then(res => res.json())
-      .then(inventory => console.log(inventory.innerText))
-      
-        }) */
-      
-  });
-
-  // Add a click button to Check Out
-  document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
-  function displayCheckOut() {
+      //.then(res => res.json())
+     // .then(inventory => console.log(inventory.innerText))
+       }) 
+      });
+       
+//Start of CHECK OUT component:
+    //Add a click button to display total amount with tax and all the products in the cart
+    document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
+    function displayCheckOut() {
     let totalWithTax = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
     document.querySelector("#amountWithTax").textContent = totalWithTax;
+    console.log(prodDescpn);
     
-  console.log(prodDescpn);
-  const listProducts = document.getElementById("itemList");
-
-  // Create an unordered list element
-  const ulProducts = document.createElement("ul");
-  
-  // Loop through the array and create list items for each element
-  prodDescpn.forEach(item => {
+    // to display in the check out all the products bought or added to the cart
+    const listProducts = document.getElementById("itemList");
+    // Create an unordered list element
+    const ulProducts = document.createElement("ul");
+    // Loop through the array and create list items for each element
+    prodDescpn.forEach(item => {
     const liProducts = document.createElement("li");
     liProducts.textContent = item;
     ulProducts.appendChild(liProducts);
-  });
-  
-  // Append the unordered list to the desired element in the document
-  listProducts.appendChild(ulProducts);
-    
-  }
-  // Get references to the button and the thank you message
-  const element = document.getElementById("myBtn");
-  // Add a click event listener to the exit button
-  element.addEventListener("click", myF);
-  function myF() {
-    document.getElementById("demo").innerHTML = "Thank you for shopping at Ricardo's Kamiseta";
+    });
+    // Append the unordered list to the desired element in the document
+    listProducts.appendChild(ulProducts);
+    }
+
+// Start of the EXIT component:
+    // Get references to the exit or refresh button
+    const element = document.getElementById("myBtn");
+    // Add a click event listener to the exit button
+    element.addEventListener("click", myF);
+    function myF() {
     location.reload();
-  }
-   
-});
+    }
+    });

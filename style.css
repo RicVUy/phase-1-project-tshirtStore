@@ -63,6 +63,18 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
+  #itemList {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 0, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+  }
   #exit {
     position: relative;
     display: flex;
