@@ -1,14 +1,12 @@
 TSHIRT STORE FOR ON-LINE SHOPPING
 
 A store front for selling three brands of Tshirt.
-C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (303).png
-
+![Screenshot (303)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/cb6541de-7183-4bb5-ab16-7b16debaf274)
 An on-line shopper will choose from the product numbers under each brand of tshirt.
 When the ID number of the Tshirt brand is entered and the submit button is clicked,
-C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (304).png
-
+![Screenshot (304)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/0815a8be-080f-45b2-93b1-99fec4c6b6c3)
 All the product description including the neck design, color, size, price and inventory of the product will be displayed in the browser.
-C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (305).png
+![Screenshot (305)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/3cfcf582-c04c-4ccb-8a13-2818c1f772a7)
 
 Items can then be added to a cart by entering the product number and clicking submit .
 C:\Users\rvuy6\OneDrive\Pictures\Screenshots\Screenshot (306).png
