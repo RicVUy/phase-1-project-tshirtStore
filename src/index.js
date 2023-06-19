@@ -66,7 +66,7 @@
           totalAm += Number(item);
           //console.log(totalAm)
         }
-        totalAmount.innerText = totalAm
+         totalAmount.innerText = totalAm
         })
 
 
@@ -91,7 +91,8 @@
     //Add a click button to display total amount with tax and all the products in the cart
     document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
     function displayCheckOut() {
-    let totalWithTax = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
+    let totalWithTax1 = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
+    let totalWithTax= totalWithTax1.toFixed(2) 
     document.querySelector("#amountWithTax").textContent = totalWithTax;
     console.log(prodDescpn);
     

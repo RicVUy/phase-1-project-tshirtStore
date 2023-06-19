@@ -27,6 +27,14 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
+  #logo-image {
+    width: 15 px;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
     #detailsOfProduct {
       position: relative;
     display: flex;
@@ -88,7 +96,7 @@ body, css {
     box-shadow: 2px 5px 5px #333;
      }
      #inventory {
-      position: relative;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,6 +106,54 @@ body, css {
     padding: 15px 20px 18px 18px;
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
+     }
+     #prodDes {
+      position: bottom;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      border: 1px solid #333;
+      background: rgba( 0, 100, 255, 0.3);
+      padding: 15px 20px 18px 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 5px #333;
+     }
+     #priceItem {
+      position: bottom;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      border: 1px solid #333;
+      background: rgba( 0, 100, 255, 0.3);
+      padding: 15px 20px 18px 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 5px #333;
+     }
+     #numItems{
+      position: bottom;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      border: 1px solid #333;
+      background: rgba( 0, 100, 255, 0.3);
+      padding: 15px 20px 18px 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 5px #333;
+     }
+     #totalAmount {
+      position: bottom;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      border: 1px solid #333;
+      background: rgba( 0, 100, 255, 0.3);
+      padding: 15px 20px 18px 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 5px #333;
      }
   #submitDetails{
     position: relative;
@@ -134,6 +190,18 @@ body, css {
     padding: 15px 20px 18px 18px;
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
+  }
+  #amountWithTax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 0, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333; 
   }
   #exit {
     position: relative;
