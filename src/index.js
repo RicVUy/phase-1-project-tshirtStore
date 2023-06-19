@@ -32,11 +32,11 @@
   
 //Start of the ADD TO CART component:
        const inputForm1 = document.querySelector("#addToCartForm");
-       inputForm1.addEventListener("submit", (event) => {
+       inputForm1.addEventListener("submit", async (event) => {
        event.preventDefault();
        const input = document.querySelector("input#EnterProductNumber");
       
-    fetch(`http://localhost:3000/tshirt/${input.value}`)
+    await fetch(`http://localhost:3000/tshirt/${input.value}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
@@ -47,7 +47,7 @@
         const totalAmount = document.querySelector("#totalAmount");
 
         priceP.innerText = data.price;
-        inventory.innerText = data.inventory
+        window.localStorage.setItem('inventory', data.inventory)
         prodSumry.innerText = data.productdesc
         console.log(prodSumry.innerText);
         // add to an array the price of product chosen
@@ -67,9 +67,11 @@
           //console.log(totalAm)
         }
         totalAmount.innerText = totalAm
-        });
+        })
+
+
        // update the inventory of the product added to the cart
-      fetch(`http://localhost:3000/tshirt/${input.value}`, {
+      await fetch(`http://localhost:3000/tshirt/${input.value}`, {
           method: "PATCH",
           headers:
       {
@@ -78,11 +80,11 @@
       },
       
       body:JSON.stringify({
-      "inventory": ((inventory.innerText) -= 1)
+      "inventory": (window.localStorage.getItem('inventory') - 1)
       })
       //.then(res => res.json())
      // .then(inventory => console.log(inventory.innerText))
-       }) 
+       }); 
       });
        
 //Start of CHECK OUT component:
@@ -116,3 +118,64 @@
     location.reload();
     }
     });
+
+    function sequentialExecution() {
+      firstFunction(secondFunction);
+    }
+
+    function firstFunction(callback) {
+      setTimeout(function() {
+        fetch(`http://localhost:3000/tshirt/${input.value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        const priceP = document.querySelector("#priceItem");
+        const prodSumry = document.querySelector("#prodDes");
+        const inventory = document.querySelector("#inventory");
+        const numItems = document.querySelector("#numItems");
+        const totalAmount = document.querySelector("#totalAmount");
+
+        priceP.innerText = data.price;
+        window.localStorage.setItem('inventory', data.inventory)
+        prodSumry.innerText = data.productdesc
+        console.log(prodSumry.innerText);
+        // add to an array the price of product chosen
+        priceList.push(parseFloat(priceP.innerText));
+        // add to another array the product-description-summary of the same product
+        prodDescpn.push(prodSumry.innerText);
+        // iterate through priceList and count each element in it.
+        let count = 0;
+        for (const item of priceList) {
+          count += 1;
+        }
+        numItems.innerText = count
+        //add up prices in the priceList array.
+        totalAm = 0;
+        for (const item of priceList) {
+          totalAm += Number(item);
+          //console.log(totalAm)
+        }
+        totalAmount.innerText = totalAm
+        })
+        if (typeof callback == 'function') {
+          callback();
+        }
+      }, 3000)
+    }
+
+    function secondFunction() {
+      fetch(`http://localhost:3000/tshirt/${input.value}`, {
+          method: "PATCH",
+          headers:
+      {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      
+      body:JSON.stringify({
+      "inventory": (window.localStorage.getItem('inventory') - 1)
+      })
+      //.then(res => res.json())
+     // .then(inventory => console.log(inventory.innerText))
+       })
+    }

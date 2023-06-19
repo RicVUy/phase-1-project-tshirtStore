@@ -28,7 +28,7 @@
       "size": "large",
       "productdesc": "PN#03/Yalex/rn/white/L",
       "price": 12.5,
-      "inventory": 95
+      "inventory": 94
     },
     {
       "id": 4,
@@ -48,7 +48,7 @@
       "size": "medium",
       "productdesc": "PN#05/Blucorner/rn/white/M",
       "price": 13,
-      "inventory": 7
+      "inventory": 9
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "size": "large",
       "productdesc": "PN#06/Blucorner/rn/white/L",
       "price": 13.5,
-      "inventory": 52
+      "inventory": 4
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "size": "small",
       "productdesc": "PN#07/Lifeline/collar/white/S",
       "price": 18.5,
-      "inventory": 47
+      "inventory": 91
     },
     {
       "id": 8,
@@ -78,7 +78,7 @@
       "size": "medium",
       "productdesc": "PN#08/Lifeline/collar/white/M",
       "price": 19.5,
-      "inventory": 2
+      "inventory": 0
     },
     {
       "id": 9,
@@ -88,7 +88,7 @@
       "size": "large",
       "productdesc": "PN#09/Lifeline/collar/white/L",
       "price": 20,
-      "inventory": 56
+      "inventory": 50
     },
     {
       "id": 10,

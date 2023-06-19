@@ -39,6 +39,66 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
     }
+    #neckDesign {
+      position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 150, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+    }
+    #color {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 150, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+     }
+     #size {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      border: 1px solid #333;
+      background: rgba( 150, 255, 150, 0.3);
+      padding: 15px 20px 18px 18px;
+      border-radius: 5px;
+      box-shadow: 2px 5px 5px #333;
+     }
+     #price {
+      position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 150, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+     }
+     #inventory {
+      position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    border: 1px solid #333;
+    background: rgba( 150, 255, 150, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+     }
   #submitDetails{
     position: relative;
     display: flex;
