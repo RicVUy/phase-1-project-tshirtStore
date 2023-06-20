@@ -1,6 +1,12 @@
 TSHIRT STORE FOR ON-LINE SHOPPING
 
+
+
 1. A store front for selling three brands of Tshirt.
+
+
+
+
 
 2. This app has basically five major parts or components:
    * The Header part which has a pink background contains the logo, name of the store, names of the three brands of tshirt and below each of them are their product numbers.
@@ -12,7 +18,9 @@ TSHIRT STORE FOR ON-LINE SHOPPING
 
 
 
-4. An on-line shopper will choose from the product numbers under each brand of tshirt.
+
+
+3. An on-line shopper will choose from the product numbers under each brand of tshirt.
 Then, the product number of the Tshirt brand is entered in the Product Description component, and in this screenshot, it is #3 and the submit button is clicked,
  In this screenshot, all the product descriptions including the neck design-"roundneck", color-"white", size-"large", price-"$12.50, and inventory- 94, of the product was displayed in the browser.
 ![Screenshot (305)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/3cfcf582-c04c-4ccb-8a13-2818c1f772a7)
@@ -20,10 +28,15 @@ Take note that the current inventory of product #3 is 94.
 
 
 
-5. Items can then be added to a cart by entering the product number in the Add To Cart component and clicking submit .
+
+
+4. Items can then be added to a cart by entering the product number in the Add To Cart component and clicking submit .
 After the submit button is clicked, the description of the product chosen,the price of the product , the current number of items in the cart and the current total amount  is displayed.
 ![Screenshot (307)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/c2d9656b-97af-4821-9799-995de225adf2)
 Here, we can see that when product #3 is submitted in Add to Cart, there is a short description of the product, the price is $12.50, there is one item in the cart, and the amount is $12.50 since it is the only item yet.
+
+
+
 
 
 
@@ -32,9 +45,13 @@ Here, we can see that when product #3 is submitted in Add to Cart, there is a sh
 
 
 
+
+
 7. If the buyer chose another product and click the submit button again, the description, the total amount and number of items should update.
 ![Screenshot (309)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/c184d684-1a69-403c-b150-609632f54a85)
 Here, product #10 is added to the cart, and the number of items is now 3 and the total amount is now $46.00.
+
+
 
 
 
@@ -45,9 +62,13 @@ So here, when we entered product #3 in Product Description component, take note 
 
 
 
+
+
 9. When the buyer checks out by clicking click me, all the products in the cart and the total amount plus the tax due will be displayed.
 ![Screenshot (312)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/76569676-a0b0-4190-a8fb-0e255b949aff)
 We can see in the Check Out component, the three products in the cart, and we have to pay a total amount of $51.00.
+
+
 
 
 
@@ -55,8 +76,7 @@ We can see in the Check Out component, the three products in the cart, and we ha
 
 
 
-Here is the image of this app if four products were added to the cart:
-![Screenshot (302)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/1e43d4b6-db9a-40dc-ac6d-61d6fa0fd302)
+
 
 
 This app needs a lot of improvement(due to time constraint) and everyone is welcome to contribute. I can mention some of them below:
