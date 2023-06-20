@@ -77,6 +77,8 @@ We can see in the Check Out component, the three products in the cart, and we ha
 
 
 
+This app can be installed by copying the github URL and forking and cloning  this repository from my github account.
+
 
 
 This app needs a lot of improvement(due to time constraint) and everyone is welcome to contribute. I can mention some of them below:
@@ -84,3 +86,7 @@ This app needs a lot of improvement(due to time constraint) and everyone is welc
 * It produces an error if the checkout is clicked more than once during a transaction.
 * A Remove Product from Cart component should be added, so that the buyer would not have to erase the entire order in case a product is removed from the cart.
 * The total amount plus tax should not be rounding off. 
+
+
+
+I would like to thank all the flatiron coaches and instructors who have patiently help me in building this app.
