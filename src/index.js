@@ -82,8 +82,7 @@
       body:JSON.stringify({
       "inventory": (window.localStorage.getItem('inventory') - 1)
       })
-      //.then(res => res.json())
-     // .then(inventory => console.log(inventory.innerText))
+      
        }); 
       });
        
@@ -119,7 +118,9 @@
     location.reload();
     }
     });
+// End of the EXIT component;
 
+// Continuation of the updating of Inventory:
     function sequentialExecution() {
       firstFunction(secondFunction);
     }
@@ -130,33 +131,13 @@
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-        const priceP = document.querySelector("#priceItem");
-        const prodSumry = document.querySelector("#prodDes");
+       
         const inventory = document.querySelector("#inventory");
-        const numItems = document.querySelector("#numItems");
-        const totalAmount = document.querySelector("#totalAmount");
+        
 
         priceP.innerText = data.price;
         window.localStorage.setItem('inventory', data.inventory)
-        prodSumry.innerText = data.productdesc
-        console.log(prodSumry.innerText);
-        // add to an array the price of product chosen
-        priceList.push(parseFloat(priceP.innerText));
-        // add to another array the product-description-summary of the same product
-        prodDescpn.push(prodSumry.innerText);
-        // iterate through priceList and count each element in it.
-        let count = 0;
-        for (const item of priceList) {
-          count += 1;
-        }
-        numItems.innerText = count
-        //add up prices in the priceList array.
-        totalAm = 0;
-        for (const item of priceList) {
-          totalAm += Number(item);
-          //console.log(totalAm)
-        }
-        totalAmount.innerText = totalAm
+      
         })
         if (typeof callback == 'function') {
           callback();
@@ -176,7 +157,6 @@
       body:JSON.stringify({
       "inventory": (window.localStorage.getItem('inventory') - 1)
       })
-      //.then(res => res.json())
-     // .then(inventory => console.log(inventory.innerText))
+
        })
     }
