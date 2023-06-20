@@ -14,7 +14,7 @@ TSHIRT STORE FOR ON-LINE SHOPPING
    * The Add to Cart component which has a purple background is where a buyer would enter the product number he decided to buy. It will also display the number of items and the total amount currently in the cart.
    * The Check Out component which has an apple green background is where all the products added to the cart and the total amount plus tax is displayed.
    * The Exit component is where the buyer can refresh the app to remove if he want to change the contents of the cart or if he wants to close the app. 
-![Screenshot (303)](https://github.com/RicVUy/phase-1-project-tshirtStore/assets/126643320/cb6541de-7183-4bb5-ab16-7b16debaf274)
+
 
 
 
