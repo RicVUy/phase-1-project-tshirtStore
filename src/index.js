@@ -131,14 +131,10 @@
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
-       
         const inventory = document.querySelector("#inventory");
-        
-
         priceP.innerText = data.price;
         window.localStorage.setItem('inventory', data.inventory)
-      
-        })
+      })
         if (typeof callback == 'function') {
           callback();
         }
