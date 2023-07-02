@@ -1,0 +1,16 @@
+{
+  "name": "phase-1-project-tshirtstore",
+  "version": "1.0.0",
+  "description": "TSHIRT STORE FOR ON-LINE SHOPPING",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

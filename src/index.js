@@ -48,7 +48,12 @@
 
         priceP.innerText = data.price;
         window.localStorage.setItem('inventory', data.inventory)
-        prodSumry.innerText = data.productdesc
+        if (Number(data.inventory) <= 0) {
+        prodSumry.innerText = (`Sorry, that product is out of stock`)
+        console.log(prodSumry.innerText);
+      }
+        else 
+        {prodSumry.innerText = data.productdesc;
         console.log(prodSumry.innerText);
         // add to an array the price of product chosen
         priceList.push(parseFloat(priceP.innerText));
@@ -65,7 +70,7 @@
         for (const item of priceList) {
           totalAm += Number(item);
           //console.log(totalAm)
-        }
+        }}
          totalAmount.innerText = totalAm
         })
 
@@ -124,7 +129,7 @@
     function sequentialExecution() {
       firstFunction(secondFunction);
     }
-
+  // To wait 3000 ms before executing the callback
     function firstFunction(callback) {
       setTimeout(function() {
         fetch(`http://localhost:3000/tshirt/${input.value}`)
