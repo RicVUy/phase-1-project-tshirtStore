@@ -47,7 +47,7 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
     }
-    #neckDesign {
+    #neckDesign, #color, #size, #price, #inventory{
       position: relative;
     display: flex;
     justify-content: center;
@@ -59,55 +59,8 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
     }
-    #color {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    border: 1px solid #333;
-    background: rgba( 150, 255, 150, 0.3);
-    padding: 15px 20px 18px 18px;
-    border-radius: 5px;
-    box-shadow: 2px 5px 5px #333;
-     }
-     #size {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column-reverse;
-      border: 1px solid #333;
-      background: rgba( 150, 255, 150, 0.3);
-      padding: 15px 20px 18px 18px;
-      border-radius: 5px;
-      box-shadow: 2px 5px 5px #333;
-     }
-     #price {
-      position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    border: 1px solid #333;
-    background: rgba( 150, 255, 150, 0.3);
-    padding: 15px 20px 18px 18px;
-    border-radius: 5px;
-    box-shadow: 2px 5px 5px #333;
-     }
-     #inventory {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    border: 1px solid #333;
-    background: rgba( 150, 255, 150, 0.3);
-    padding: 15px 20px 18px 18px;
-    border-radius: 5px;
-    box-shadow: 2px 5px 5px #333;
-     }
-     #prodDes {
+    
+     #prodDes, #priceItem, #numItems, #totalAmount {
       position: bottom;
       display: flex;
       justify-content: center;
@@ -119,7 +72,7 @@ body, css {
       border-radius: 5px;
       box-shadow: 2px 5px 5px #333;
      }
-     #priceItem {
+     #prodDes1 {
       position: bottom;
       display: flex;
       justify-content: center;
@@ -131,7 +84,7 @@ body, css {
       border-radius: 5px;
       box-shadow: 2px 5px 5px #333;
      }
-     #numItems{
+     #priceItem1, #numItems1, #totalAmount1 {
       position: bottom;
       display: flex;
       justify-content: center;
@@ -143,18 +96,7 @@ body, css {
       border-radius: 5px;
       box-shadow: 2px 5px 5px #333;
      }
-     #totalAmount {
-      position: bottom;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column-reverse;
-      border: 1px solid #333;
-      background: rgba( 0, 100, 255, 0.3);
-      padding: 15px 20px 18px 18px;
-      border-radius: 5px;
-      box-shadow: 2px 5px 5px #333;
-     }
+     
   #submitDetails{
     position: relative;
     display: flex;
@@ -163,6 +105,18 @@ body, css {
     flex-direction: row;
     border: 1px solid #333;
     background: rgba(0, 0, 255, 0.3);
+    padding: 15px 20px 18px 18px;
+    border-radius: 5px;
+    box-shadow: 2px 5px 5px #333;
+  }
+  #removeFromCart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid #333;
+    background: rgba(150, 150, 125, 0.3);
     padding: 15px 20px 18px 18px;
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
@@ -179,7 +133,7 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
-  #itemList {
+  #itemList, #amountWithTax {
     position: relative;
     display: flex;
     justify-content: center;
@@ -191,18 +145,7 @@ body, css {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
-  #amountWithTax{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    border: 1px solid #333;
-    background: rgba( 0, 255, 150, 0.3);
-    padding: 15px 20px 18px 18px;
-    border-radius: 5px;
-    box-shadow: 2px 5px 5px #333; 
-  }
+ 
   #exit {
     position: relative;
     display: flex;

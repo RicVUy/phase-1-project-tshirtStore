@@ -4,7 +4,7 @@
     let prodDescpn = [];
    //initialized variable for the total amount of all the products chosen.
     let totalAm = 0;
-
+    let count = 0;
 // Start of PRODUCT DESCRIPTION component:
     // submit a product number and make the description of the chosen product display 
      document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +49,7 @@
         priceP.innerText = data.price;
         window.localStorage.setItem('inventory', data.inventory)
         if (Number(data.inventory) <= 0) {
-        prodSumry.innerText = (`Sorry, that product is out of stock`)
+        prodSumry.innerText = (`Sorry, that product is out of stock.`)
         console.log(prodSumry.innerText);
       }
         else 
@@ -60,7 +60,7 @@
         // add to another array the product-description-summary of the same product
         prodDescpn.push(prodSumry.innerText);
         // iterate through priceList and count each element in it.
-        let count = 0;
+         count = 0;
         for (const item of priceList) {
           count += 1;
         }
@@ -71,7 +71,7 @@
           totalAm += Number(item);
           //console.log(totalAm)
         }}
-         totalAmount.innerText = totalAm
+         totalAmount.innerText = `$${totalAm.toFixed(2)}`
         })
 
 
@@ -90,14 +90,99 @@
       
        }); 
       });
+    
+     // Start of Remove From Cart Component
+     const inputForm2 = document.querySelector("#removeFromCartForm");
+     inputForm2.addEventListener("submit", async (event) => {
+     event.preventDefault();
+     const input1 = document.querySelector("input#EnterProductNumber1");
+    
+  await fetch(`http://localhost:3000/tshirt/${input1.value}`)
+    .then((response) => response.json())
+    .then ((data) => {
+      console.log(data)
+      
+      const prodSumry1 = document.querySelector("#prodDes1");
+      const inventory = document.querySelector("#inventory");
+
+      
+      window.localStorage.setItem('inventory', (data.inventory))
+     prodSumry1.innerText = data.productdesc;
+      console.log(prodSumry1.innerText);
+
+      // remove to an array the product description of product chosen
+      for (const item of prodDescpn){
+         if (item ===  (prodSumry1.innerText)) {
+           let index = prodDescpn.indexOf(item);
+             if (index > -1) {
+               prodDescpn.splice(index, 1);
+             }
+             return prodDescpn;
+           }}
+           
+        
+      
+      })
+      await fetch(`http://localhost:3000/tshirt/${input1.value}`)
+      .then((response) => response.json())
+      .then ((data) => {
+      const priceP1 = document.querySelector("#priceItem1");
+       const numItems1 = document.querySelector("#numItems1");
+      const totalAmount1 = document.querySelector("#totalAmount1");
+       priceP1.innerText = data.price;
+       console.log(typeof priceP1.innerText)
+       console.log(priceP1.innerText)
+       console.log(totalAm)
+        // remove to an array the price of product removed
+/*for (const prices of priceList){
+
+       if (prices == (priceP1.innerText)) {
+         let index = priceList.indexOf(prices);
+         console.log(typeof prices)
+           if (index > -1) {
+             priceList.splice(index, 1);
+           }
+           return priceList;
+         }}
+         totalAm = 0;
+         count = 0;
+         for (const prices of priceList){
+            totalAm += (prices)
+            count += 1
+         }*/
+         totalAm = totalAm - Number(priceP1.innerText)
+         console.log(totalAm)
+         count -= 1
        
+
+         console.log(count)
+         totalAmount1.innerText = `$${totalAm.toFixed(2)}`
+         numItems1.innerText = count
+     
+     })
+     // update the inventory of the product added to the cart
+    await fetch(`http://localhost:3000/tshirt/${input1.value}`, {
+        method: "PATCH",
+        headers:
+    {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    
+    body:JSON.stringify({
+    "inventory": (Number(window.localStorage.getItem('inventory')) + 1)
+    })
+    
+     }); 
+    });
+
 //Start of CHECK OUT component:
     //Add a click button to display total amount with tax and all the products in the cart
     document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
     function displayCheckOut() {
     let totalWithTax1 = Math.round(totalAm * 1.1)  // instead of rounding cut to the nearest tenth
     let totalWithTax= totalWithTax1.toFixed(2) 
-    document.querySelector("#amountWithTax").textContent = totalWithTax;
+    document.querySelector("#amountWithTax").textContent = `$${totalWithTax}`;
     console.log(prodDescpn);
     
     // to display in the check out all the products bought or added to the cart
@@ -112,6 +197,13 @@
     });
     // Append the unordered list to the desired element in the document
     listProducts.appendChild(ulProducts);
+    const line = document.getElementById("itemList");
+    const lineSep = document.createElement("ul");
+    const lineSeparator = document.createElement("li");
+    lineSeparator.textContent = `---------------------`;
+    lineSep.appendChild(lineSeparator)
+    line.appendChild(lineSep)
+
     }
 
 // Start of the EXIT component:
@@ -157,6 +249,41 @@
       
       body:JSON.stringify({
       "inventory": (window.localStorage.getItem('inventory') - 1)
+      })
+
+       })
+    }
+    function sequentialExecution() {
+      firstFunction(secondFunction);
+    }
+
+    function firstFunction(callback) {
+      setTimeout(function() {
+        fetch(`http://localhost:3000/tshirt/${input1.value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        const inventory = document.querySelector("#inventory");
+        priceP.innerText = data.price;
+        window.localStorage.setItem('inventory', (data.inventory))
+      })
+        if (typeof callback == 'function') {
+          callback();
+        }
+      }, 6000)
+    }
+
+    function secondFunction() {
+      fetch(`http://localhost:3000/tshirt/${input1.value}`, {
+          method: "PATCH",
+          headers:
+      {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      
+      body:JSON.stringify({
+      "inventory": (Number(window.localStorage.getItem('inventory'))+ 1)
       })
 
        })
