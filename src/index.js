@@ -1,4 +1,31 @@
-     // created an array of prices of items chosen by the buyer
+function showImage() {
+  var image = document.getElementById("image");
+  image.style.display = "block";
+}
+
+function hideImage() {
+  var image = document.getElementById("image");
+  image.style.display = "none";
+}
+function showImage1() {
+  var image1 = document.getElementById("image1");
+  image1.style.display = "block";
+}
+
+function hideImage1() {
+  var image1 = document.getElementById("image1");
+  image1.style.display = "none";
+}
+function showImage2() {
+  var image2 = document.getElementById("image2");
+  image2.style.display = "block";
+}
+
+function hideImage2() {
+  var image = document.getElementById("image2");
+  image.style.display = "none";
+}
+    // created an array of prices of items chosen by the buyer
     let priceList = [];
     //created an array of product-description-summary of items chosen by the buyer
     let prodDescpn = [];
