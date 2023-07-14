@@ -105,3 +105,6 @@ This app project needs further improvements. I can name one of them.
 
 
 I would like to thank all the flatiron coaches and instructors who have patiently help and guided me in building this app.
+
+Here is a GIF of the project:
+![](https://www.youtube.com/watch?v=P8Xac8vrBfk)
