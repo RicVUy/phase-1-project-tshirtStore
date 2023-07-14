@@ -28,7 +28,7 @@
       "size": "large",
       "productdesc": "PN#03/Yalex/rn/white/L",
       "price": 12.5,
-      "inventory": 80
+      "inventory": 79
     },
     {
       "id": 4,
@@ -48,7 +48,7 @@
       "size": "medium",
       "productdesc": "PN#05/Blucorner/rn/black/M",
       "price": 13.5,
-      "inventory": 45
+      "inventory": 43
     },
     {
       "id": 6,
@@ -68,7 +68,7 @@
       "size": "small",
       "productdesc": "PN#07/Lifeline/collar/white/S",
       "price": 18.5,
-      "inventory": 83
+      "inventory": 82
     },
     {
       "id": 8,

@@ -136,7 +136,12 @@ function hideImage2() {
       window.localStorage.setItem('inventory', (data.inventory))
      prodSumry1.innerText = data.productdesc;
       console.log(prodSumry1.innerText);
-
+      
+      //Find out if a product entered is in the cart.
+      const isItThere = (product) => product === prodSumry1.innerText;
+       if (prodDescpn.findIndex(isItThere) === -1) {
+        prodSumry1.innerText = (`Sorry, that product is not in your cart!`)
+       } else {
       // remove to an array the product description of product chosen
       for (const item of prodDescpn){
          if (item ===  (prodSumry1.innerText)) {
@@ -146,10 +151,8 @@ function hideImage2() {
              }
              return prodDescpn;
            }}
-           
-        
-      
-      })
+          }
+         })
       await fetch(`http://localhost:3000/tshirt/${input1.value}`)
       .then((response) => response.json())
       .then ((data) => {
@@ -157,35 +160,25 @@ function hideImage2() {
        const numItems1 = document.querySelector("#numItems1");
       const totalAmount1 = document.querySelector("#totalAmount1");
        priceP1.innerText = data.price;
-       console.log(typeof priceP1.innerText)
-       console.log(priceP1.innerText)
-       console.log(totalAm)
-        // remove to an array the price of product removed
-/*for (const prices of priceList){
-
-       if (prices == (priceP1.innerText)) {
-         let index = priceList.indexOf(prices);
-         console.log(typeof prices)
-           if (index > -1) {
-             priceList.splice(index, 1);
-           }
-           return priceList;
-         }}
-         totalAm = 0;
-         count = 0;
-         for (const prices of priceList){
-            totalAm += (prices)
-            count += 1
-         }*/
-         totalAm = totalAm - Number(priceP1.innerText)
-         console.log(totalAm)
-         count -= 1
        
-
-         console.log(count)
+       // check if the price of the product to be remove is in the priceList array
+       const isItThere1 = (prices) => prices === Number(priceP1.innerText);
+       if (priceList.findIndex(isItThere1) === -1) {
+        priceP1.innerText = (`Sorry, that product is not in your cart!`)
+       } else {
+        // remove to an array the price of product removed
+        index = priceList.indexOf(priceP1.innerText);
+        const newPriceList = priceList.splice(index, 1);
+        console.log(newPriceList);
+       //Add up the prices of the new array 
+        for (const pr of newPriceList) {
+          totalAm -= pr;
+        }
+         count -= 1
+         
          totalAmount1.innerText = `$${totalAm.toFixed(2)}`
          numItems1.innerText = count
-     
+      }
      })
      // update the inventory of the product added to the cart
     await fetch(`http://localhost:3000/tshirt/${input1.value}`, {

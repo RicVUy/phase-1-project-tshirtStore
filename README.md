@@ -8,12 +8,26 @@ TSHIRT STORE FOR ON-LINE SHOPPING
 
 
 
-2. This app has basically five major parts or components:
-   * The Header part which has a pink background contains the logo, name of the store, names of the three brands of tshirt and below each of them are their product numbers.
-   * The Product Description component which has a salmon background is where a buyer can see the detailed description of a product by entering the product numbers found in the Header.
-   * The Add to Cart component which has a purple background is where a buyer would enter the product number he decided to buy. It will also display the number of items and the total amount currently in the cart.
-   * The Check Out component which has an apple green background is where all the products added to the cart and the total amount plus tax is displayed.
-   * The Exit component is where the buyer can refresh the app to remove if he want to change the contents of the cart or if he wants to close the app. 
+2. This app has basically six major parts or components:
+   * The Header  
+                  It has a pink background and contains the logo, name of the store, names of the three brands of tshirt and below each of them are their product numbers.
+                  If the pointer is hovered on the box inside of which is the name of the brand, a picture of the tshirt will appear and when the pointer is moved away from the box, the picture disappear.
+
+   * The Product Description component  
+                  It has a salmon background and it is where a buyer can see the detailed description of a product by entering a product number found in the Header.
+                  The description includes the neck design, color, size, price and the inventory or amount of stock available.
+   * The Add To Cart component 
+                  It has a purple yam background and is where a buyer would enter the product number of the tshirts he decided to buy. It will also display the summary description of the tshirt he added to the cart,  the current number of items and the total amount of the products currently in the cart. The inventory of that product he added will decrease by one and this will persist in the database. He can enter any amount of any product he chooses as long as it is in stock. If the tshirt he chooses is out of stock, a message: "Sorry, the product is out of stock" will appear and he will not be able to add it to the cart.
+   * The Remove from Cart component
+                  It has a khaki-green background. If a buyer changes his mind and decided to remove a product from his cart, he can enter its product number. It will display a summarry description of the product he removed, the price of the product he removed,the current number of items in the cart, and the current total amount of products in the cart. As one of the results , the inventory of the product he returned will increase by one. If he mistakenly entered the number of a product which is not in his cart, a message: "Sorry, that product is not in your cart" will appear.                 
+   * The Check Out component
+                  It has an apple green background. When the Check Out button is clicked. The summary description of all the products added to the cart and the current total amount plus tax is displayed.
+                  If after he clicked the checkout button and a buyer decided that he wants to buy another product or more of a product, he can go back to the Add To Cart component and enter its product number. Likewise, if he decided not to buy a product or all of the products already in his cart, he can go back to Remove from Cart component and enter the product number.
+                  Doing all of these, everything will update including the changes in inventory which will persist in the db.json database. 
+                  note: Everytime the Check Out button is clicked, the current contents of the cart is displayed on the top of a dash line.
+   * The Exit component 
+                  It is where the buyer can click the exit button to refresh the app to order a new batch of tshirts or if he wants to close the app and exit. It also displays the phone number and the email address of the store. A thank you message is displayed here.
+
 
 
 
@@ -62,6 +76,9 @@ So here, when we entered product #3 in Product Description component, take note 
 
 
 
+9. When the buyer decided to remove a product from the cart, he should enter its product number and click the submit button. Everything will update including the inventory which will increased by one.
+
+
 
 
 9. When the buyer checks out by clicking click me, all the products in the cart and the total amount plus the tax due will be displayed.
@@ -81,12 +98,10 @@ This app can be installed by copying the github URL and forking and cloning  thi
 
 
 
-This app needs a lot of improvement(due to time constraint) and everyone is welcome to contribute. I can mention some of them below:
-* It should prevent a buyer from adding a product to the cart if the inventory is currently zero.
-* It produces an error if the checkout is clicked more than once during a transaction.
-* A Remove Product from Cart component should be added, so that the buyer would not have to erase the entire order in case a product is removed from the cart.
-* The total amount plus tax should not be rounding off. 
+This app project needs further improvements. I can name one of them.
+1.  When the buyer changes the content of the cart,click again the checkout button, the previous content is still displayed below the current. Although I separated it from the current content by a dashed line. The advantage  of this is he can still see his original order, the disadvantage is he might get confused by it.
+2.  Please add here your suggestions for further improvement.
 
 
 
-I would like to thank all the flatiron coaches and instructors who have patiently help me in building this app.
+I would like to thank all the flatiron coaches and instructors who have patiently help and guided me in building this app.
