@@ -54,6 +54,7 @@ TSHIRT STORE FOR ON-LINE SHOPPING
     It is where the buyer can click the exit button to refresh the app to order a new batch of tshirts or if he wants to 
     close the app and exit. It also displays the phone number and the email address of the store. A thank you message is displayed here.
 
+<video src="gif%20Flatiron%20phase1-project.mp4" controls title="Title"></video>
 
 
 3. An on-line shopper will choose from the product numbers under each brand of tshirt.
