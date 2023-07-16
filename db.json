@@ -8,7 +8,7 @@
       "size": "small",
       "productdesc": "PN#01/Yalex/rn/white/S",
       "price": 10.5,
-      "inventory": 21
+      "inventory": 22
     },
     {
       "id": 2,
@@ -28,7 +28,7 @@
       "size": "large",
       "productdesc": "PN#03/Yalex/rn/white/L",
       "price": 12.5,
-      "inventory": 78
+      "inventory": 77
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "size": "small",
       "productdesc": "PN#04/Blucorner/rn/black/S",
       "price": 12.75,
-      "inventory": 89
+      "inventory": 88
     },
     {
       "id": 5,
