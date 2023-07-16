@@ -1,12 +1,8 @@
-TSHIRT STORE FOR ON-LINE SHOPPING
+  TSHIRT STORE FOR ON-LINE SHOPPING
 
 
 
 1. A store front for selling three brands of Tshirt.
-
-
-
-
 
 2. This app has basically six major parts or components:
    * The Header - 
@@ -21,6 +17,8 @@ TSHIRT STORE FOR ON-LINE SHOPPING
    It has a salmon background and it is where a buyer can see the detailed description of a product by 
    entering a product number found in the Header.The description includes the neck design, color, size, 
    price and the inventory or amount of stock available.
+   
+   
    * The Add To Cart component -
                  
    It has a purple yam background and is where a buyer would enter the product number of the tshirts he 
@@ -30,7 +28,7 @@ TSHIRT STORE FOR ON-LINE SHOPPING
     he chooses as long as it is in stock. If the tshirt he chooses is out of stock, a message: 
     "Sorry, the product is out of stock" will appear and he will not be able to add it to the cart.
    
-   * The Remove from Cart component-
+   * The Remove From Cart component-
                   
    It has a khaki-green background. If a buyer changes his mind and decided to remove a product from his cart, 
    he can enter its product number. It will display a summarry description of the product he removed, the price
@@ -55,15 +53,11 @@ TSHIRT STORE FOR ON-LINE SHOPPING
     close the app and exit. It also displays the phone number and the email address of the store. A thank you message is displayed here.
 
 
-
-
-
-
-
+              ---------------------------------------------------
 
 This app can be installed by copying the github URL and forking and cloning  this repository from my github account.
 
-
+              --------------------------------------------------
 
 This app project needs further improvements. I can name one of them.
 1.  When the buyer changes the content of the cart,click again the checkout button, the previous content is still displayed below 
@@ -71,17 +65,40 @@ the current. Although I separated it from the current content by a dashed line. 
 original order, the disadvantage is he might get confused by it.
 2.  Please add here your suggestions for further improvement.
 
-
+            -----------------------------------------------------
 
 I would like to thank all the flatiron coaches and instructors who have patiently help and guided me in building this app.
 
-
+            --------------------------------------------------
 
 Here are some screenshots of the app:
+
+1. The app as it appears when reloaded:
+
 ![Alt text](<Screenshot (369).png>)
+
+------------------------------------------------
+
+2. The mouse is hovered over the Yalex brand:
 
 ![Alt text](<Screenshot (340).png>)
 
+----------------------------------------------
+
+3. after adding two of product number 8, it became out of stock:
+
 ![Alt text](<Screenshot (358).png>)
 
+-----------------------------------------------
+
+4. Product number 4 is added and then remove from the cart:
+
+![Alt text](<Screenshot (365).png>)
+
+----------------------------------------------
+
+5.The buyer has mistakenly removed a product that is not in his cart. The products in the cart are also shown.
+
 ![Alt text](<Screenshot (367).png>)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P8Xac8vrBfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,3 +1,4 @@
+//show pictures of the three brands of tshirts
 function showImage() {
   var image = document.getElementById("image");
   image.style.display = "block";
@@ -96,7 +97,7 @@ function hideImage2() {
         totalAm = 0;
         for (const item of priceList) {
           totalAm += Number(item);
-          //console.log(totalAm)
+        
         }}
          totalAmount.innerText = `$${totalAm.toFixed(2)}`
         })
@@ -180,7 +181,10 @@ function hideImage2() {
          numItems1.innerText = count
       }
      })
-     // update the inventory of the product added to the cart
+     // update the inventory of the product removed from the cart
+    // if (priceList.findIndex(isItThere1) === -1) {
+     // priceP1.innerText = (`Sorry, that product is not in your cart!`)
+   //  } else {
     await fetch(`http://localhost:3000/tshirt/${input1.value}`, {
         method: "PATCH",
         headers:
@@ -194,6 +198,7 @@ function hideImage2() {
     })
     
      }); 
+    // }
     });
 
 //Start of CHECK OUT component:
@@ -237,74 +242,3 @@ function hideImage2() {
     });
 // End of the EXIT component;
 
-// Continuation of the updating of Inventory:
-    function sequentialExecution() {
-      firstFunction(secondFunction);
-    }
-  // To wait 3000 ms before executing the callback
-    function firstFunction(callback) {
-      setTimeout(function() {
-        fetch(`http://localhost:3000/tshirt/${input.value}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        const inventory = document.querySelector("#inventory");
-        priceP.innerText = data.price;
-        window.localStorage.setItem('inventory', data.inventory)
-      })
-        if (typeof callback == 'function') {
-          callback();
-        }
-      }, 3000)
-    }
-
-    function secondFunction() {
-      fetch(`http://localhost:3000/tshirt/${input.value}`, {
-          method: "PATCH",
-          headers:
-      {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      
-      body:JSON.stringify({
-      "inventory": (window.localStorage.getItem('inventory') - 1)
-      })
-
-       })
-    }
-    function sequentialExecution() {
-      firstFunction(secondFunction);
-    }
-
-    function firstFunction(callback) {
-      setTimeout(function() {
-        fetch(`http://localhost:3000/tshirt/${input1.value}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        const inventory = document.querySelector("#inventory");
-        priceP.innerText = data.price;
-        window.localStorage.setItem('inventory', (data.inventory))
-      })
-        if (typeof callback == 'function') {
-          callback();
-        }
-      }, 6000)
-    }
-
-    function secondFunction() {
-      fetch(`http://localhost:3000/tshirt/${input1.value}`, {
-          method: "PATCH",
-          headers:
-      {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      
-      body:JSON.stringify({
-      "inventory": (Number(window.localStorage.getItem('inventory'))+ 1)
-      })
-
-       })
-    }
