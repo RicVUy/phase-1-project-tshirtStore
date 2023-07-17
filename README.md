@@ -22,7 +22,7 @@
    * The Add To Cart component -
                  
    It has a purple yam background and is where a buyer would enter the product number of the tshirts he 
-    to buy. It will also display the summary description of the tshirt he added to the cart,  the current 
+    would like to buy. It will also display the summary description of the tshirt he added to the cart,  the current 
     number of items and the total amount of the products currently in the cart. The inventory of that product 
     he added will decrease by one and this will persist in the database. He can enter any amount of any product 
     he chooses as long as it is in stock. If the tshirt he chooses is out of stock, a message: 
@@ -101,4 +101,6 @@ Here are some screenshots of the app:
 
 ![Alt text](<Screenshot (367).png>)
 
+------------------------------------------------
+Please click the link to see a walk-through video:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P8Xac8vrBfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -74,14 +74,16 @@ function hideImage2() {
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
 
-        priceP.innerText = data.price;
+        //priceP.innerText = data.price;
         window.localStorage.setItem('inventory', data.inventory)
         if (Number(data.inventory) <= 0) {
         prodSumry.innerText = (`Sorry, that product is out of stock.`)
+        priceP.innerText = (`Sorry, that product is out of stock.`)
         console.log(prodSumry.innerText);
       }
         else 
         {prodSumry.innerText = data.productdesc;
+          priceP.innerText = data.price;
         console.log(prodSumry.innerText);
         // add to an array the price of product chosen
         priceList.push(parseFloat(priceP.innerText));
@@ -154,16 +156,18 @@ function hideImage2() {
            }}
           }
          })
+         const priceP1 = document.querySelector("#priceItem1");
+         const isItThere1 = (prices) => prices === Number(priceP1.innerText);
       await fetch(`http://localhost:3000/tshirt/${input1.value}`)
       .then((response) => response.json())
       .then ((data) => {
-      const priceP1 = document.querySelector("#priceItem1");
+      
        const numItems1 = document.querySelector("#numItems1");
       const totalAmount1 = document.querySelector("#totalAmount1");
        priceP1.innerText = data.price;
        
        // check if the price of the product to be remove is in the priceList array
-       const isItThere1 = (prices) => prices === Number(priceP1.innerText);
+      
        if (priceList.findIndex(isItThere1) === -1) {
         priceP1.innerText = (`Sorry, that product is not in your cart!`)
        } else {
@@ -182,9 +186,9 @@ function hideImage2() {
       }
      })
      // update the inventory of the product removed from the cart
-    // if (priceList.findIndex(isItThere1) === -1) {
-     // priceP1.innerText = (`Sorry, that product is not in your cart!`)
-   //  } else {
+     if (priceList.findIndex(isItThere1) === -1) {
+     
+     } else {
     await fetch(`http://localhost:3000/tshirt/${input1.value}`, {
         method: "PATCH",
         headers:
@@ -198,7 +202,7 @@ function hideImage2() {
     })
     
      }); 
-    // }
+     }
     });
 
 //Start of CHECK OUT component:
