@@ -209,7 +209,7 @@ function hideImage2() {
     //Add a click button to display total amount with tax and all the products in the cart
     document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
     function displayCheckOut() {
-    let totalWithTax1 = Math.round(totalAm * 1.10)  // instead of rounding cut to the nearest hundredth
+    let totalWithTax1 = Math.round(totalAm * 1.10)  
     let totalWithTax= totalWithTax1.toFixed(2) 
     document.querySelector("#amountWithTax").textContent = `$${totalWithTax}`;
     console.log(prodDescpn);
@@ -245,4 +245,75 @@ function hideImage2() {
     }
     });
 // End of the EXIT component;
+
+function sequentialExecution() {
+  firstFunction(secondFunction);
+}
+
+function firstFunction(callback) {
+  setTimeout(function() {
+    fetch(`http://localhost:3000/tshirt/${input.value}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    const inventory = document.querySelector("#inventory");
+    priceP.innerText = data.price;
+    window.localStorage.setItem('inventory', data.inventory)
+  })
+    if (typeof callback == 'function') {
+      callback();
+    }
+  }, 3000)
+}
+
+function secondFunction() {
+  fetch(`http://localhost:3000/tshirt/${input.value}`, {
+      method: "PATCH",
+      headers:
+  {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  
+  body:JSON.stringify({
+  "inventory": (window.localStorage.getItem('inventory') - 1)
+  })
+
+   })
+}
+function sequentialExecution() {
+  firstFunction(secondFunction);
+}
+
+function firstFunction(callback) {
+  setTimeout(function() {
+    fetch(`http://localhost:3000/tshirt/${input1.value}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data)
+    const inventory = document.querySelector("#inventory");
+    priceP.innerText = data.price;
+    window.localStorage.setItem('inventory', (data.inventory))
+  })
+    if (typeof callback == 'function') {
+      callback();
+    }
+  }, 6000)
+}
+
+function secondFunction() {
+  fetch(`http://localhost:3000/tshirt/${input1.value}`, {
+      method: "PATCH",
+      headers:
+  {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  
+  body:JSON.stringify({
+  "inventory": (Number(window.localStorage.getItem('inventory'))+ 1)
+  })
+
+   })
+}
 

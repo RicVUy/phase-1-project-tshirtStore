@@ -55,7 +55,8 @@
 
               ---------------------------------------------------
 
-This app can be installed by copying the github URL and forking and cloning  this repository from my github account.
+This app can be installed by copying the github URL and forking and cloning  this repository from my github account, or copy and
+ paste the URL of the project repository, then type json-server --watch db.json to acess the json database.
 
               --------------------------------------------------
 
@@ -63,7 +64,7 @@ This app project needs further improvements. I can name one of them.
 1.  When the buyer changes the content of the cart,click again the checkout button, the previous content is still displayed below 
 the current. Although I separated it from the current content by a dashed line. The advantage  of this is he can still see his 
 original order, the disadvantage is he might get confused by it.
-2.  Please add here your suggestions for further improvement.
+2.  Please give your suggestions for further improvement.
 
             -----------------------------------------------------
 
