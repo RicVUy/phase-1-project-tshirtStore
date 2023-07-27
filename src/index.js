@@ -31,7 +31,7 @@ function hideImage2() {
     //created an array of product-description-summary of items chosen by the buyer
     let prodDescpn = [];
    //initialized variable for the total amount of all the products chosen.
-    let totalAm = 0;
+    let totalAmount = 0;
     let count = 0;
 // Start of PRODUCT DESCRIPTION component:
     // submit a product number and make the description of the chosen product display 
@@ -154,6 +154,7 @@ function hideImage2() {
            }}
           }
          })
+         totalAm = 0;
          const priceP1 = document.querySelector("#priceItem1");
          const isItThere1 = (prices) => prices === Number(priceP1.innerText);
       await fetch(`http://localhost:3000/tshirt/${input1.value}`)
@@ -170,15 +171,29 @@ function hideImage2() {
         priceP1.innerText = (`Sorry, that product is not in your cart!`)
        } else {
         // remove to an array the price of product removed
-        index = priceList.indexOf(priceP1.innerText);
+        let index = 0;
+        for (const pr of priceList) {
+          if ((pr) === (Number(priceP1.innerText))){
+             index = priceList.indexOf(pr);
+            
+          }
+           }
+          if (index > -1) {
+            priceList.splice(index, 1);
+           console.log(priceList)
+          }
+          for (const p of priceList){
+            totalAm += p 
+            
+        
+       /* index = priceList.indexOf(priceP1.innerText);
         const newPriceList = priceList.splice(index, 1);
         console.log(newPriceList);
        //Add up the prices of the new array 
         for (const pr of newPriceList) {
-          totalAm -= pr;
+          totalAm -= pr;*/
         }
          count -= 1
-         
          totalAmount1.innerText = `$${totalAm.toFixed(2)}`
          numItems1.innerText = count
       }
