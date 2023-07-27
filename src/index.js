@@ -74,7 +74,8 @@ function hideImage2() {
         const numItems = document.querySelector("#numItems");
         const totalAmount = document.querySelector("#totalAmount");
 
-        //priceP.innerText = data.price;
+        priceP.innerText = data.price;
+        console.log(priceP.innerText)
         window.localStorage.setItem('inventory', data.inventory)
         if (Number(data.inventory) <= 0) {
         prodSumry.innerText = (`Sorry, that product is out of stock.`)
@@ -83,7 +84,7 @@ function hideImage2() {
       }
         else 
         {prodSumry.innerText = data.productdesc;
-          priceP.innerText = data.price;
+         // priceP.innerText = data.price;
         console.log(prodSumry.innerText);
         // add to an array the price of product chosen
         priceList.push(parseFloat(priceP.innerText));
@@ -99,13 +100,10 @@ function hideImage2() {
         totalAm = 0;
         for (const item of priceList) {
           totalAm += Number(item);
-        
-        }}
+         }}
          totalAmount.innerText = `$${totalAm.toFixed(2)}`
         })
-
-
-       // update the inventory of the product added to the cart
+        // update the inventory of the product added to the cart
       await fetch(`http://localhost:3000/tshirt/${input.value}`, {
           method: "PATCH",
           headers:
@@ -209,7 +207,7 @@ function hideImage2() {
     //Add a click button to display total amount with tax and all the products in the cart
     document.getElementById("myBtn1").addEventListener("click", displayCheckOut);
     function displayCheckOut() {
-    let totalWithTax1 = Math.round(totalAm * 1.10)  
+    let totalWithTax1 = (totalAm * 1.10)  
     let totalWithTax= totalWithTax1.toFixed(2) 
     document.querySelector("#amountWithTax").textContent = `$${totalWithTax}`;
     console.log(prodDescpn);
@@ -218,13 +216,13 @@ function hideImage2() {
     const listProducts = document.getElementById("itemList");
     // Create an unordered list element
     const ulProducts = document.createElement("ul");
-    // Loop through the array and create list items for each element
+    // Loop through the array and create list items for each element and append
     prodDescpn.forEach(item => {
     const liProducts = document.createElement("li");
     liProducts.textContent = item;
     ulProducts.appendChild(liProducts);
     });
-    // Append the unordered list to the desired element in the document
+    // Append the dashed line to the desired element in the document
     listProducts.appendChild(ulProducts);
     const line = document.getElementById("itemList");
     const lineSep = document.createElement("ul");
